@@ -74,6 +74,15 @@ function yourFunction() {
     setTimeout(yourFunction, 3000);
 }
 
+function preloadImage(elem) {
+    var img = new Image();
+    img.src = `images/${elem[0]}`;
+}
+
+function preloadRegular() {
+    listOfThings.forEach(preloadImage)
+}
+
 const listOfRPGThings = [
     ["dungeon.png", "http://onemilliondungeons.com/"],
     ["omt.png", "https://www.drivethrurpg.com/product/171413/On-Mighty-Thews?manufacturers_id=5335"],
@@ -82,6 +91,10 @@ const listOfRPGThings = [
     ["trader.png", "https://www.drivethrurpg.com/product/113019/The-Cosmic-Trader?manufacturers_id=5335"],
     ["conan.png", "downloads/World_of_Conan.pdf"]
 ]
+
+function preloadRPG() {
+    listOfRPGThings.forEach(preloadImage)
+}
 
 function yourRPGFunction() {
     document.querySelector("#flipper").classList.toggle("flip")
