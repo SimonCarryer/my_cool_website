@@ -107,7 +107,7 @@ function yourRPGFunction() {
     if (counter >= listOfRPGThings.length) {
         counter = 0
     }
-    setTimeout(yourRPGFunction, 3000);
+    setTimeout(yourRPGFunction, 5000);
 }
 
 
