@@ -71,10 +71,25 @@ a {
     justify-content: center;
   }
 
+
 .column {
     width: 365px;
     display: flex;
     flex-direction: column;
+}
+
+@media only screen and (max-width: 600px) {
+    .columns {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .column {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .item {
