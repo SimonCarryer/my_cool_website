@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <div class=header>
+        <h1>It's Simon Carryer dot com!</h1>
+    </div>
+    <div class="columns">
+        <div class="column">
+            <div class="item">
+                <div class="text">
+                    <h2>Welcome!</h2>
+                    I do kind of a lot of RPG stuff! I've tried to collect it all in one place, for easier bragging.
+                </div>
+            </div>
+            <div class="item">
+                <div class="text">
+                    <h2>On Mighty Thews</h2>
+                    <p>I wrote a game called <a href="https://www.drivethrurpg.com/product/171413/On-Mighty-Thews">On
+                            Mighty Thews</a>. It's a pulp fantasy roleplaying game that's player-driven and fast to
+                        play. <a href="https://www.rpg.net/reviews/archive/15/15788.phtml">Here</a> is a pretty good
+                        review, and <a href="http://thee-rapture.carnel.org/reviews/on-mighty-thews">here</a> is another
+                        one.</p>
+                    <p>I made a little thing called the <a href="downloads/Pulpy_Primer.pdf">Pulpy Primer</a> to help
+                        people get the vibe.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="text">
+                    <h2>Nod</h2>
+                    <p><a href="https://www.drivethrurpg.com/product/130234/Nod?manufacturers_id=5335">Nod</a> is a kind
+                        of
+                        story-game thing I wrote. I feel like I never quite got the physical layout right, and it's
+                        harder
+                        to play than it should be, but there are
+                        some good ideas in there.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="text">
+                    <h2>Tonight We Slay a Dragon or Die in the Attempt</h2>
+                    <p>TWSADODITA is a one-page story-game kinda thing. You can <a href="downloads/TWSADODITA.pdf">you
+                            can download it for
+                            free.</a> I recommend using <a href="downloads/Party_Rules.pdf">these rules</a> for building
+                        a party.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="text">
+                    <h2>World of Conan</h2>
+                    <p>This is a very small Apocalypse World hack for doing Conan stuff. <a
+                            href="downloads/World_of_Conan.pdf">Download it for free!</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div id="flipper" class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper">
+                    <div id="front" class="front">
+                        Front!
+                    </div>
+                    <div id="back" class="back">
+                        Back!
+                    </div>
+                </div>
+
+            </div>
+            <div class="item">
+                <div id="meContainer">
+                    <img class='img' src="images/simon-carryer.jpg" alt="" />
+                    <canvas id="myFace" width="340" height="340"></canvas>
+                </div>
+            </div>
+            <div class="item">
+                <form style="border:1px solid #ccc;padding:3px;text-align:center;"
+                    action="https://tinyletter.com/SimonCarryer" method="post" target="popupwindow"
+                    onsubmit="window.open('https://tinyletter.com/SimonCarryer', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+                    <p><label for="tlemail">Sometimes I like to send emails!<br> Maybe you would like to receive
+                            them?</label>
+                    </p>
+                    <p><input type="text" style="width:140px" name="email" id="tlemail" /></p><input type="hidden"
+                        value="1" name="embed" /><input type="submit" value="Subscribe" /><br><br>
+                </form>
+            </div>
+        </div>
+        <div class="column">
+            <div class="item">
+                <div class="text">
+                    <h2>D&D Adventures</h2>
+                    I have written a few adventures for "old school" D&D.
+                    <ul>
+                        <li><a
+                                href="https://www.drivethrurpg.com/product/113019/The-Cosmic-Trader?manufacturers_id=5335">The
+                                Cosmic Trader</a> is a self-published adventure about a strange shop in a small
+                            border-town.</li>
+                        <li><a href="https://www.drivethrurpg.com/product/141036/The-Idea-from-Space">The Idea From
+                                Space</a> (published by Lamentations of the Flame Princess) is an island with a lot of
+                            weird stuff going on. Ten Foot Pole wrote a <a
+                                href="https://tenfootpole.org/ironspike/?p=2843">very kind review</a>.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item">
+                <div class="text">
+                    <h2>Dungeon Generator</h2>
+                    <p><a href="https://onemilliondungeons.com">One Million Dungeons</a> is a dungeon generator for
+                        fifth edition D&D. I like to think it's a bit better than other generators at producing sensible
+                        dungeons with a bit of story to them. There's also an <a
+                            href="https://onemilliondungeons.com/encounters">encounter generator</a> for 5e which I
+                        found
+                        very useful as a tool when I played that game.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="text">
+                    <h2>Contact</h2>
+                    <p>Maybe you'd like to get in touch about something? Email me at simoncarryer@gmail.com, or try
+                        <a href="https://twitter.com/simoncarryer">@simoncarryer</a> on Twitter if that's your thing.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="text">
+                    <h2>Non-RPG Stuff</h2>
+                    <p>When I must, I do things that aren't related to role playing games. You can find that stuff <a
+                            href="index.html">here</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/main.js" type="text/javascript"></script>
+    <script>yourRPGFunction()</script>
+</body>
