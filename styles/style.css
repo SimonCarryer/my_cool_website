@@ -1,20 +1,20 @@
 body {
-    background-color:rgb(1, 1, 20)
+    background-color: rgb(1, 1, 20)
 }
 
 h1 {
-    font-family:'Courier New', Courier, monospace ;
+    font-family: 'Courier New', Courier, monospace;
     font-variant-caps: small-caps;
     animation: wiggle 2s;
     animation-iteration-count: infinite;
-    font-size:300%;
+    font-size: 300%;
     color: rgba(255, 255, 255, 0.908);
 }
 
 
 h2 {
-    font-family:'Courier New', Courier, monospace ;
-    font-size:150%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 150%;
     color: rgb(1, 1, 9);
 }
 
@@ -24,21 +24,42 @@ a {
 }
 
 @keyframes wiggle {
-    0% {transform: translate(1px, 1px) rotate(0deg);}
-    20% {transform: translate(1px, -1px) rotate(1deg);}
-    40% {transform: translate(-1px, 2px) rotate(-1deg);}
-    60% {transform: translate(-3px, 1px) rotate(0deg);}
-    70% {transform: translate(0px, -1px) rotate(1deg);}
-    90% {transform: translate(2px, 0px) rotate(0deg);}
-    100% {transform: translate(1px, 1px) rotate(-1deg);}
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    20% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    40% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(0px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(2px, 0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, 1px) rotate(-1deg);
+    }
 }
 
 .img {
-    position:absolute;z-index:1;
+    position: absolute;
+    z-index: 1;
     filter: grayscale();
-} 
+}
 
-.flipimage{
+.flipimage {
     filter: grayscale();
     height: 365px;
     width: 365px;
@@ -46,17 +67,17 @@ a {
 }
 
 #meContainer {
-    display:inline-block;
-    width:340px; 
-    height:340px;
-    position:relative; 
+    display: inline-block;
+    width: 340px;
+    height: 340px;
+    position: relative;
 }
 
 #myFace {
-    position:relative;
-    z-index:20;
-    width:340px; 
-    height:340px;
+    position: relative;
+    z-index: 20;
+    width: 340px;
+    height: 340px;
 }
 
 .header {
@@ -69,7 +90,7 @@ a {
     flex-direction: row;
     width: 100%;
     justify-content: center;
-  }
+}
 
 
 .column {
@@ -78,23 +99,39 @@ a {
     flex-direction: column;
 }
 
+#column1 {
+    order: 1;
+}
+
+#column2 {
+    order: 2;
+}
+
+#column3 {
+    order: 3;
+}
+
 @media only screen and (max-width: 600px) {
     .columns {
         display: flex;
         flex-direction: column;
         justify-content: center;
-      }
+    }
 
-      .column {
+    .column {
         width: 100%;
         display: flex;
         flex-direction: column;
+    }
+
+    #column2 {
+        order: 4;
     }
 }
 
 .item {
     background-color: rgba(255, 255, 255, 0.908);
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .text {
@@ -105,52 +142,56 @@ a {
 
 /* entire container, keeps perspective */
 .flip-container {
-	perspective: 1000px;
+    perspective: 1000px;
 }
-	/* flip the pane when hovered
+
+/* flip the pane when hovered
 	.flip-container:hover .flipper, .flip-container.hover .flipper {
 		transform: rotateY(180deg);
 	} 
   
 */
-    .flip-container.flip .flipper {
-        transform: rotateY(180deg);
-    }
-       
-   
+.flip-container.flip .flipper {
+    transform: rotateY(180deg);
+}
 
-.flip-container, .front, .back {
-	width: 365px;
-	height: 365px;
+
+
+.flip-container,
+.front,
+.back {
+    width: 365px;
+    height: 365px;
 
 }
 
 /* flip speed goes here */
 .flipper {
-	transition: 0.9s;
-	transform-style: preserve-3d;
+    transition: 0.9s;
+    transform-style: preserve-3d;
 
-	position: relative;
+    position: relative;
 }
 
 /* hide back of pane during swap */
-.front, .back {
-	backface-visibility: hidden;
+.front,
+.back {
+    backface-visibility: hidden;
 
-	position: absolute;
-	top: 0;
-	left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
     background-color: rgba(255, 255, 255, 0.908);
 }
 
 /* front pane, placed above back */
 .front {
-	z-index: 2;
-	/* for firefox 31 */
-	transform: rotateY(0deg);
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
 }
 
 /* back, initially hidden pane */
 .back {
-	transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
