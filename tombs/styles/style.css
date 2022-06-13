@@ -1,0 +1,175 @@
+/* Gross hack */
+body.preload *{
+  animation-duration: 0s !important;
+  -webkit-animation-duration: 0s !important;
+  transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+}
+
+.grid {
+    display: grid;
+    row-gap: 0px;
+    column-gap: 0px;
+    grid-template-columns: repeat(3, 1fr);
+    float: left;
+  }
+  
+
+.cardNumber {
+  position: absolute;
+  font-size: larger;
+  background-color: white;
+  padding: 5px;
+  margin: 5px;
+  width: 20px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.cardNumber.details {
+  position: relative;
+  margin-left: 5px;
+}
+
+.cardImage {
+  max-width:100%;
+  border-radius:13px;
+  height: 100%;
+  overflow:hidden;
+}
+
+ /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+ .card {
+  background-color: transparent;
+  width: 300px;
+  height: 213px;
+  margin: 2px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.cardInner {
+  position: relative;
+  border-radius:15px;
+  border: 2px solid black;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.card.flipped .cardInner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.cardFront, .cardBack {
+  position: absolute;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.cardFront {
+  transform: rotateY(180deg);
+}
+
+
+.card.signs {
+  position: absolute;
+  background-color: lightgray;
+  left: 70px;
+  top: 50px;
+  border-radius: 15px;
+  border: 2px solid black;
+  width: 200px;
+  height: 120px;
+  padding: 10px;
+}
+
+.signsCardInner {
+  position: absolute;
+  visibility: hidden;
+  transform: rotate(-15deg);
+  height: 100%;
+  z-index: -1;
+  animation-duration: 0.8s;
+  animation-name: shuffleDetailReverse;
+}
+
+.signsCardInner.shown {
+  z-index: 3;
+  visibility: visible;
+  animation-duration: 0.8s;
+  animation-name: shuffleDetail;
+}
+
+.details {
+  position: relative;
+  float: left;
+  margin-left: 20px;
+}
+
+.card.detail {
+  height: 500px;
+  width: 340px;
+  background-color: #757476;
+  border-radius: 15px;
+  border-width: 2px;
+  border-style:solid;
+  border-color: black;
+  transition: 0.4s ease-out;
+  position: absolute;
+  padding: 10px;
+}
+
+.card.detail.top {
+  animation-duration: 1s;
+  animation-name: shuffle;
+  z-index: 2;
+}
+
+.card.detail.second {
+  z-index: 1;
+}
+
+
+@keyframes shuffle {
+  0% {
+    z-index: -1;
+    transform: translate(0px, 0px) rotate(0deg);
+}
+  50% {
+    z-index: 1;
+    transform: translate(480px, 100px) rotate(-8deg);
+}
+}
+
+@keyframes shuffleDetail {
+  0% {
+    z-index: -1;
+    transform: translate(0px, 0px) rotate(0deg);
+}
+  40% {
+    z-index: 1;
+    transform: translate(20px, -280px) rotate(8deg);
+}
+}
+
+@keyframes shuffleDetailReverse {
+  0% {
+    z-index: 3;
+    visibility: visible;
+}
+  60% {
+    z-index: 0;
+    transform: translate(20px, -250px) rotate(8deg);
+    visibility: visible;
+
+}
+100% {
+  z-index: 0;
+  visibility: visible;
+  transform: translate(-10px, 10px);
+}
+}

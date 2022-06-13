@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="styles/style.css">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<title>Tombs</title>
+
+<body class="preload">
+<div class="grid">
+  <div class="cardStack">
+    <div class="signsCardInner" id="signsCard1" onclick="this.classList.remove('shown')"><div class="card signs">Smell of decay.</div></div>
+    <div class="card" id="card1" onclick="clicked(1)" ondblclick="doubleClicked(1);"><div class="cardInner"><div class="cardBack"><img class="cardImage" src="images/cardBack.jpg"></div><div class="cardFront"><div class="cardNumber">1</div><img class="cardImage" src="images/cardFront1.jpg"></div></div></div>
+  </div>
+  <div class="cardStack">
+    <div class="signsCardInner" id="signsCard2" onclick="this.classList.remove('shown')"><div class="card signs">Sound of dripping water.</div></div>
+   <div class="card" id="card2" onclick="clicked(2)" ondblclick="doubleClicked(2);"><div class="cardInner"><div class="cardBack"><img class="cardImage" src="images/cardBack.jpg"></div><div class="cardFront"><div class="cardNumber">2</div><img class="cardImage" src="images/cardFront2.jpg"></div></div></div>
+   </div> 
+   <div class="cardStack">
+    <div class="signsCardInner" id="signsCard3" onclick="this.classList.remove('shown')"><div class="card signs">Nothing to notice.</div></div>
+  <div class="card" id="card3" onclick="clicked(3)" ondblclick="doubleClicked(3);"><div class="cardInner"><div class="cardBack"><img class="cardImage" src="images/cardBack.jpg"></div><div class="cardFront"><div class="cardNumber">3</div><img class="cardImage" src="images/cardFront3.jpg"></div></div></div>
+  </div> 
+  <div class="cardStack">
+    <div class="signsCardInner" id="signsCard4" onclick="this.classList.remove('shown')"><div class="card signs">A tingling feeling.</div></div>
+  <div class="card" id="card4" onclick="clicked(4)" ondblclick="doubleClicked(4);"><div class="cardInner"><div class="cardBack"><img class="cardImage" src="images/cardBack.jpg"></div><div class="cardFront"><div class="cardNumber">4</div><img class="cardImage" src="images/cardFront4.jpg"></div></div></div>
+  </div>
+  <div class="cardStack">
+    <div class="signsCardInner" id="signsCard5" onclick="this.classList.remove('shown')"><div class="card signs">Nothing to notice.</div></div>
+  <div class="card" id="card5" onclick="clicked(5)" ondblclick="doubleClicked(5);"><div class="cardInner"><div class="cardBack"><img class="cardImage" src="images/cardBack.jpg"></div><div class="cardFront"><div class="cardNumber">5</div><img class="cardImage" src="images/cardFront5.jpg"></div></div></div>
+  </div>
+  <div class="cardStack">
+    <div class="signsCardInner" id="signsCard6" onclick="this.classList.remove('shown')"><div class="card signs">Glittering in the darkness.</div></div>
+  <div class="card" id="card6" onclick="clicked(6)" ondblclick="doubleClicked(6);"><div class="cardInner"><div class="cardBack"><img class="cardImage" src="images/cardBack.jpg"></div><div class="cardFront"><div class="cardNumber">6</div><img class="cardImage" src="images/cardFront6.jpg"></div></div></div>
+  </div>
+  <div class="cardStack">
+    <div class="signsCardInner" id="signsCard7" onclick="this.classList.remove('shown')"><div class="card signs">Sounds of men arguing. Footprints lead this way.</div></div>
+    <div class="card" id="card7" onclick="clicked(7)" ondblclick="doubleClicked(7);"><div class="cardInner"><div class="cardBack"><img class="cardImage" src="images/cardBack.jpg"></div><div class="cardFront"><div class="cardNumber">7</div><img class="cardImage" src="images/cardFront7.jpg"></div></div></div>
+  </div>
+  <div class="cardStack">
+    <div class="signsCardInner" id="signsCard8" onclick="this.classList.remove('shown')"><div class="card signs">Footprints lead this way.</div></div>
+  <div class="card" id="card8" onclick="clicked(8)" ondblclick="doubleClicked(8);"><div class="cardInner"><div class="cardBack"><img class="cardImage" src="images/cardBackEntrance.jpg"></div><div class="cardFront"><div class="cardNumber">8</div><img class="cardImage" src="images/cardFront8.jpg"></div></div></div>
+  </div>  
+  <div class="cardStack">
+    <div class="signsCardInner" id="signsCard9" onclick="this.classList.remove('shown')"><div class="card signs">Nothing to notice.</div></div>
+  <div class="card" id="card9" onclick="clicked(9)" ondblclick="doubleClicked(9);"><div class="cardInner"><div class="cardBack"><img class="cardImage" src="images/cardBack.jpg"></div><div class="cardFront"><div class="cardNumber">9</div><img class="cardImage" src="images/cardFront9.jpg"></div></div></div>
+</div>  
+</div>
+  <div class="details">
+    <div class="container">
+      <div class="card detail" id="detailCard1">
+        <div class="cardNumber details">1</div>
+        <h3 class="title">Crypts</h3>
+        <p>A whole lot of little alcoves with bodies in 'em. Probably some treasure.</p>
+      </div>
+      <div class="card detail" id="detailCard2">
+        <div class="cardNumber details">2</div>
+        <h3 class="title">Pool</h3>
+        <p>Some kinda magic pool going on here.</p>
+      </div>
+      <div class="card detail" id="detailCard3">
+        <div class="cardNumber details">3</div>
+        <h3 class="title">Twisting corridor</h3>
+        <p>It's kinda long.</p>
+      </div>
+      <div class="card detail" id="detailCard4">
+        <div class="cardNumber details">4</div>
+        <h3 class="title">Embalming room</h3>
+      <p>Yikes! A g-g-g-ghost!</p>
+      </div>
+      <div class="card detail" id="detailCard5">
+        <div class="cardNumber details">5</div>
+        <h3 class="title">Chapel</h3>
+        <p>A chapel with some treasure or something.</p>
+      </div>
+      <div class="card detail" id="detailCard6">
+        <div class="cardNumber details">6</div>
+        <h3 class="title">Great tomb</h3>
+        <p>A freaky mummy in golden armour!</p>
+      </div>
+      <div class="card detail" id="detailCard7">
+        <div class="cardNumber details">7</div>
+        <h3 class="title">Big ol' room</h3>
+        <p>Oh no there's some bandits here!</p>
+      </div>
+      <div class="card detail" id="detailCard8">
+        <div class="cardNumber details">8</div>
+      <h3 class="title">Tomb Entrance</h3>
+    <p>Stairs lead down from the entrance. No baddies here.</p>
+  </div>
+  <div class="card detail" id="detailCard9">
+    <div class="cardNumber details">9</div>
+  <h3 class="title">Nothing</h3>
+  <p>How did you get here?</p>
+</div>
+      <div class="card detail top" id="detailCard0">
+        <h3 class="title">Instructions</h3>
+        <p>Start at the entrance, probably (it's the one with the little dolmen symbol on it). Click on a card to investigate that part of the dungeon. Double click a card to explore in that direction.</p>
+      </div>
+  </div>
+
+  <script src="scripts/cards.js" type="text/javascript"></script>
+</body>
