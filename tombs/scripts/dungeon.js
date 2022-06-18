@@ -1,29 +1,4 @@
 
-cards = [
-    {'id':1,
-    'sides':[-1,1,1,-1],
-    'entrance': false},
-    {'id':2,
-    'sides':[-1,1,1,1],
-    'entrance': false},
-    {'id':3,
-    'sides':[-1,-1,1,1],
-    'entrance': false},
-    {'id':4,
-    'sides':[1,1,-1,-1],
-    'entrance': false},
-    {'id':5,
-    'sides':[1,-1,1,1],
-    'entrance': false},
-    {'id':6,
-    'sides':[1,-1,-1,-1],
-    'entrance': false},
-    {'id':7,
-    'sides':[-1,1,-1,-1],
-    'entrance': false},
-    {'id':8,
-    'sides':[1,-1,-1,1],
-    'entrance': true}]
 
 empty = {'id':9,
 'sides':[0,0,0,0],
@@ -120,7 +95,7 @@ function buildDungeon() {
     while (!validStartPosition(startCard, startPosition)) {
         startPosition = randomTile();
     }
-    map[startPosition[0]][startPosition[1]] = startCard;
+    map[startPosition[0]][startPosition[1]] = {...startCard};
 
     unlinked = positions.filter(pos => !unlinkedEnds(pos).every(e => e <= 0));
     placedPositions = []
@@ -131,7 +106,7 @@ function buildDungeon() {
         suitable = suitableCard(nextPos);
         if (suitable !== undefined) {
             daysSinceLastError += 1;
-            map[nextPos[0]][nextPos[1]] = suitable;
+            map[nextPos[0]][nextPos[1]] = {...suitable}; // here's where a copy of the card gets added
             placedPositions.push(nextPos);
         }
         else {
@@ -145,9 +120,62 @@ function buildDungeon() {
         }
         unlinked = positions.filter(pos => !unlinkedEnds(pos).every(e => e <= 0));
     }
-    map = map.flat();
 }
 
+function addLinks() {
+    positions.forEach(function(position) {
+        card = map[position[0]][position[1]];
+        card.pos = position.join();
+        card.neighbours = [];
+        // top
+        if (card.sides[0] > 0) {
+            neighbour = map[position[0]-1][position[1]];
+            card.neighbours.push(neighbour);
+        }
+        // right
+        if (card.sides[1] > 0) {
+            neighbour = map[position[0]][position[1]+1];
+            card.neighbours.push(neighbour);
+        }
+        // bottom
+        if (card.sides[2] > 0) {
+            neighbour = map[position[0]+1][position[1]];
+            card.neighbours.push(neighbour);
+        }
+        // left
+        if (card.sides[3] > 0) {
+            neighbour = map[position[0]][position[1]-1];
+            card.neighbours.push(neighbour);
+        }
+    }
+        )
+}
 
+function entryPath(card, path) {
+    var newPath = [...path];
+    newPath.push(card.pos);
+    if (card.entrance) {
+        paths.push(newPath);
+    }
+    else {
+        card.neighbours.forEach(function(neighbour) {
+            if (!newPath.includes(neighbour.pos)) {
+                entryPath(neighbour, newPath);
+            }
+        });
+}
+}
+
+function distances() {
+    positions.forEach(position => {
+        card = map[position[0]][position[1]];
+        paths = [];
+        entryPath(card, []);
+        distance = Math.min(...paths.map(p => p.length));
+        card.distance = distance;
+    });
+}
 
 buildDungeon()
+addLinks()
+distances()
