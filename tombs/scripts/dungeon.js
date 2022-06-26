@@ -1,6 +1,8 @@
 
 
-empty = {'id':9,
+empty = {
+'name': 'Nothing',
+'id':0,
 'sides':[0,0,0,0],
 'entrance': false}
 
@@ -31,10 +33,10 @@ function randomTile() {
 }
 
 function validStartPosition(card, position) {
+    // vertical
+    hOk = (position[0] == 1) | (position[0] == 0 && card.sides[0] == -1) | (position[0] == 2 && card.sides[2] == -1)
     // horizontal
-    hOk = (position[0] == 1) | (position[0] == 0 && card.sides[3] == -1) | (position[0] == 2 && card.sides[1] == -1)
-    //vertical
-    vOk = (position[1] == 1) | (position[1] == 0 && card.sides[0] == -1) | (position[1] == 2 && card.sides[2] == -1)
+    vOk = (position[1] == 1) | (position[1] == 0 && card.sides[3] == -1) | (position[1] == 2 && card.sides[1] == -1)
     return vOk && hOk
 }
 
@@ -50,6 +52,7 @@ function suitableCard(position) {
 }
 
 function unlinkedEnds(position) {
+    var unlinked
     card = map[position[0]][position[1]]
     if (!card.sides.every(e => e == 0)) {
         unlinked = [0, 0, 0, 0]
@@ -89,18 +92,16 @@ function unlinkedEnds(position) {
 }
 
 function buildDungeon() {
-    startCard = cards.filter(card => card.entrance)[0]
-
-    startPosition = randomTile()
+    var startCard = cards.filter(card => card.entrance)[0]
+    const startPositions = [...Shuffle(positions)];
+    var startPosition = startPositions.pop();
     while (!validStartPosition(startCard, startPosition)) {
-        startPosition = randomTile();
+        startPosition = startPositions.pop();
     }
     map[startPosition[0]][startPosition[1]] = {...startCard};
-
-    unlinked = positions.filter(pos => !unlinkedEnds(pos).every(e => e <= 0));
-    placedPositions = []
-    daysSinceLastError = 0
-
+    var unlinked = positions.filter(pos => !unlinkedEnds(pos).every(e => e <= 0));
+    var placedPositions = []
+    var daysSinceLastError = 0
     while (unlinked.length > 0) {
         nextPos = Shuffle(unlinked)[0];
         suitable = suitableCard(nextPos);
@@ -111,10 +112,10 @@ function buildDungeon() {
         }
         else {
             badPos = placedPositions.pop()
-            map[badPos[0]][badPos[1]] = empty;
+            map[badPos[0]][badPos[1]] = {...empty};
             if (daysSinceLastError == 1) {
                 badPos = placedPositions.pop()
-                map[badPos[0]][badPos[1]] = empty;
+                map[badPos[0]][badPos[1]] = {...empty};
             }
             daysSinceLastError = 0;
         }
