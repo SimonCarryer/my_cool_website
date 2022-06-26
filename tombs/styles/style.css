@@ -41,7 +41,7 @@ body.preload *{
  .card {
   background-color: transparent;
   width: 300px;
-  height: 213px;
+  height: 300px;
   margin: 2px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
