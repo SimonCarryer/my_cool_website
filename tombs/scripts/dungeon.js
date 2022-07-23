@@ -4,7 +4,8 @@ empty = {
 'name': 'Nothing',
 'id':0,
 'sides':[0,0,0,0],
-'entrance': false}
+'description': ["There's nothing here."],
+'tags': []}
 
 positions = [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]]
 

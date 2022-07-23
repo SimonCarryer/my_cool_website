@@ -3,121 +3,185 @@ cards = [
     {
 'id': 1,
 'sides': [1,1,1,1],
+'description': 'Rough passages lead in four directions.',
 'entrance': false,
+'tags': ['guardians'],
 'name': 'Crossroads'
     },
 {'id': 2,
 'sides': [-1,-1,1,1],
+'description': 'A large room without features.',
 'entrance': false,
-'name': 'Empty Room'},
+'tags': ['guardians'],
+'name': 'Ceremonial Chamber'},
 {'id': 8,
 'sides': [-1,-1,1,-1],
+'description': 'Stairs lead down from the surface.',
 'entrance': true,
-'name': 'Throne Room'
+'tags': [],
+'name': 'Entrance Room'
 },
 {'id': 9,
 'sides': [1,-1,1,-1],
+'description': 'An animal has dug a den into the side of this corridor.',
 'entrance': false,
+'tags': [],
 'name': 'Animal Den'
 },
 {'id': 11,
 'sides': [-1, 1, 1, -1],
+'description': 'A roughly made passageway.',
 'entrance': false,
+'tags': ['guardians'],
 'name': 'Corridor'
 },
 {'id': 12,
-'sides': [-1, 1, 1, 1],
+'sides': [1, 1, -1, 1],
+'description': 'A stone statue sits on a dais surrounded by water.',
 'entrance': false,
-'name': 'Pool'
+'tags': [],
+'name': 'Statue'
 },
 {'id': 13,
 'sides': [-1, -1, 1, 1],
+'description': 'In a side room a statue sits on a plinth, surrounded by water.',
 'entrance': false,
-'name': 'Water Temple'
+'tags': ['guardians'],
+'name': 'Statue Room'
 },
 {'id': 22,
 'sides': [-1, -1, 1, 1],
+'description': 'A natural cave has been incorporated into the complex.',
 'entrance': false,
+'tags': [],
 'name': 'Cave'
 },
 {'id': 27,
 'sides': [-1, 1, -1, -1],
+'description': 'A twisting tunnel is flooded with water. At the end of the tunnel is an old chest.',
 'entrance': false,
-'name': 'Treasure'
+'tags': [],
+'name': 'Flooded Labyrinth'
 } ,
 {'id': 28,
 'sides': [1, -1, 1, 1],
+'description': 'A natural cavern has been incorporated into the complex.',
 'entrance': false,
+'tags': [],
 'name': 'Cavern'
 },
 {'id': 32,
 'sides': [-1, -1, -1, 1],
+'description': 'Clay jars are placed around the room, and niches are carved into the walls.',
 'entrance': false,
-'name': 'Trophy Room'
+'tags': [],
+'name': 'Treasure Room'
 },
 {'id': 33,
 'sides': [-1, 1, -1, -1],
+'description': 'The ceiling of this room has collapsed, and it is full of rubble and boulders.',
 'entrance': false,
-'name': 'Dead End'
+'tags': [],
+'name': 'Collapsed Room'
 },
 {'id': 37,
 'sides': [1, -1, -1, -1],
+'description': 'This room was once used for storage.',
 'entrance': false,
-'name': 'Dead End'
+'tags': [],
+'name': 'Store Room'
 },
 {'id': 38,
 'sides': [-1, -1, 1, -1],
+'description': 'This passageway seems to have been abandoned before it was completed.',
 'entrance': false,
+'tags': [],
 'name': 'Dead End'
 },
 {'id': 40,
 'sides': [-1, 1, 1, 1],
+'description': 'A natural cave leads down from the surface.',
 'entrance': true,
+'tags': [],
 'name': 'Cave Mouth'
 },
 {'id': 43,
 'sides': [-1, 1, 1, -1],
+'description': 'A pool of water is enclosed by a low wall. Clay jars and niches in the walls.',
 'entrance': false,
+'tags': [],
 'name': 'Sacred Pool'
 },
 {'id': 44,
 'sides': [-1, -1, -1, 1],
+'description': 'This natural cave is full of large mushrooms.',
 'entrance': false,
+'tags': [],
 'name': 'Mushroom Cave'
 },
 {'id': 48,
 'sides': [1, 1, 1, -1],
+'description': 'A barred cell is built into the side of the passage.',
 'entrance': false,
+'tags': ['guardians'],
 'name': 'Cell'
 },
 {'id': 49,
 'sides': [1, -1, 1, -1],
+'description': 'A sarcophagus sits atop a raised dais.',
 'entrance': false,
-'name': 'Temple'
+'tags': [],
+'name': 'Tomb'
 },
 {'id': 50,
 'sides': [-1, 1, -1, -1],
+'description': 'The octagonal room contains a sarcophagus.',
 'entrance': false,
+'tags': [],
 'name': 'Tomb'
+},
+{
+'id': 51,
+'sides': [1,1,1,1],
+'description': 'Rough passages lead in four directions.',
+'entrance': false,
+'tags': ['guardians'],
+'name': 'Crossroads'
+},
+{
+'id': 52,
+'sides': [-1,1,-1,1],
+'description': 'A long straight corridor.',
+'entrance': false,
+'tags': ['guardians'],
+'name': 'Corridor'
 },
 {'id': 58,
 'sides': [-1, -1, 1, -1],
+'description': 'A chest sits on a dais surrounded by water.',
 'entrance': false,
-'name': 'Eye Room'
+'tags': [],
+'name': 'Temple'
 },
 {'id': 59,
 'sides': [1, 1, 1, -1],
+'description': 'The doors here are magically warded.',
 'entrance': false,
-'name': 'Portal'
+'tags': [],
+'name': 'Wards'
 },
 {'id': 62,
 'sides': [1, -1, -1, 1],
+'description': 'An octagonal room.',
 'entrance': false,
+'tags': ['guardians'],
 'name': 'Octagon'
 },
 {'id': 63,
 'sides': [1, 1, -1, -1],
+'description': 'This roughly made passage narrows to only a few feet wide.',
 'entrance': false,
+'tags': [],
 'name': 'Narrow Corridor'
 } 
 ]

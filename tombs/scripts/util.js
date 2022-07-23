@@ -13,3 +13,11 @@ function Shuffle(array) {
     const shuffled = array.sort(() => 0.5 - rand());
     return shuffled;
 }
+
+function d6() {
+    return Math.floor(rand() * 6) + 1;
+}
+
+function rollOver(target) {
+    return d6() > target;
+};

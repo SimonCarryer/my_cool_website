@@ -23,8 +23,14 @@ function addDetailCard(card, idx) {
     elem.id= `detailCard${idx}`
     elem.innerHTML = `<div class="cardNumber details">${idx}</div>
     <h3 class="title">${card.name}</h3>
-    <p>Eventually some kind of description will go here based on the card.</p>
-    <p>${card.distance}</p>`
+    <p>${card.description}</p>`
+
+    if (card.decoration) {
+        elem.innerHTML += `<p>${card.decoration}</p>`
+    };
+    if (card.encounter) {
+        elem.innerHTML += `<p>${card.encounter.text}</p>`
+    };
     deck.appendChild(elem);
 }
 
