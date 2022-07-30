@@ -4,14 +4,14 @@ function addCard(card, idx) {
     grid = document.getElementById("dungeonGrid");
     elem = document.createElement('div');
     if (card.entrance) {
-        cardBack = 'images/newEntrance.jpg'
+        cardBack = 'images/cardBackEntrance.jpg'
     }
     else {
-        cardBack = 'images/newBack.jpg'
+        cardBack = 'images/cardBack.jpg'
     }
     elem.class = "cardStack"
     elem.innerHTML =   `<div class="signsCardInner" id="signsCard${idx}" onclick="this.classList.remove('shown')"><div class="card signs">Eventually some warning signs will go here.</div></div>
-    <div class="card" id="card${idx}" onclick="clicked(${idx})" ondblclick="doubleClicked(${idx});"><div class="cardInner"><div class="cardBack"><img class="cardImage" src="${cardBack}"></div><div class="cardFront"><div class="cardNumber">${idx}</div><img class="cardImage" src='images/cards/tombs_${card.id}.jpg'></div></div></div>
+    <div class="card" id="card${idx}" onclick="clicked(${idx})" ondblclick="doubleClicked(${idx});"><div class="cardInner"><div class="cardBack"><img class="cardImage" src="${cardBack}"></div><div class="cardFront"><div class="cardNumber">${idx}</div><img class="cardImage" src='images/cardFront${card.id}.jpg'></div></div></div>
             </div>`
     grid.appendChild(elem)
 }
