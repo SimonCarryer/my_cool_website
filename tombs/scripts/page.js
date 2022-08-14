@@ -22,14 +22,14 @@ function addDetailCard(card, idx) {
     elem.classList = "card detail"
     elem.id= `detailCard${idx}`
     elem.innerHTML = `<div class="cardNumber details">${idx}</div>
-    <h3 class="title">${card.name}</h3>
-    <p>${card.description}</p>`
-
-    if (card.decoration) {
-        elem.innerHTML += `<p>${card.decoration}</p>`
-    };
-    if (card.encounter) {
-        elem.innerHTML += `<p>${card.encounter.text}</p>`
+    <h3 class="title">${card.name}</h3>`
+    card.description.forEach(line => {
+        elem.innerHTML += `<p>${line}</p>`
+    })
+    if (card.interactive) {
+        interactive = document.createElement('details');
+        interactive.innerHTML = `<summary>${card.interactive.summary}</summary>${card.interactive.content}`
+        elem.appendChild(interactive);
     };
     deck.appendChild(elem);
 }

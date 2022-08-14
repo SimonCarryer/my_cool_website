@@ -103,20 +103,24 @@ function buildDungeon() {
     var unlinked = positions.filter(pos => !unlinkedEnds(pos).every(e => e <= 0));
     var placedPositions = []
     var daysSinceLastError = 0
+    var counter = 0
     while (unlinked.length > 0) {
         nextPos = Shuffle(unlinked)[0];
         suitable = suitableCard(nextPos);
         if (suitable !== undefined) {
             daysSinceLastError += 1;
-            map[nextPos[0]][nextPos[1]] = {...suitable}; // here's where a copy of the card gets added
+            map[nextPos[0]][nextPos[1]] = JSON.parse(JSON.stringify(suitable)); // here's where a copy of the card gets added
             placedPositions.push(nextPos);
         }
         else {
             badPos = placedPositions.pop()
             map[badPos[0]][badPos[1]] = {...empty};
-            if (daysSinceLastError == 1) {
-                badPos = placedPositions.pop()
-                map[badPos[0]][badPos[1]] = {...empty};
+            if (daysSinceLastError >= 1) {
+                while (daysSinceLastError >= 1) {
+                    badPos = placedPositions.pop()
+                    map[badPos[0]][badPos[1]] = {...empty};
+                    daysSinceLastError -= 1;
+                }
             }
             daysSinceLastError = 0;
         }
@@ -155,29 +159,37 @@ function addLinks() {
 
 function entryPath(card, path) {
     var newPath = [...path];
-    newPath.push(card.pos);
+    newPath.push(card);
     if (card.entrance) {
         paths.push(newPath);
     }
     else {
         card.neighbours.forEach(function(neighbour) {
-            if (!newPath.includes(neighbour.pos)) {
+            if (!newPath.includes(neighbour)) {
                 entryPath(neighbour, newPath);
             }
         });
 }
 }
 
-function distances() {
+function looted(pathList) {
+    return !pathList.every(p => p.some(c => c.tags.includes('impassible')));
+}
+
+
+function findPaths() {
     positions.forEach(position => {
         card = map[position[0]][position[1]];
         paths = [];
         entryPath(card, []);
+        card.looted = looted(paths);
         distance = Math.min(...paths.map(p => p.length));
         card.distance = distance;
     });
 }
 
+
 buildDungeon()
 addLinks()
-distances()
+findPaths()
+
