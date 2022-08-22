@@ -21,3 +21,18 @@ function d6() {
 function rollOver(target) {
     return d6() > target;
 };
+
+function entryPath(card, path) {
+    var newPath = [...path];
+    newPath.push(card);
+    if (card.entrance) {
+        paths.push(newPath);
+    }
+    else {
+        card.neighbours.forEach(function(neighbour) {
+            if (!newPath.includes(neighbour)) {
+                entryPath(neighbour, newPath);
+            }
+        });
+}
+}

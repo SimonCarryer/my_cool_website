@@ -157,21 +157,6 @@ function addLinks() {
         )
 }
 
-function entryPath(card, path) {
-    var newPath = [...path];
-    newPath.push(card);
-    if (card.entrance) {
-        paths.push(newPath);
-    }
-    else {
-        card.neighbours.forEach(function(neighbour) {
-            if (!newPath.includes(neighbour)) {
-                entryPath(neighbour, newPath);
-            }
-        });
-}
-}
-
 function looted(pathList) {
     return !pathList.every(p => p.some(c => c.tags.includes('impassible')));
 }
