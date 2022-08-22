@@ -89,9 +89,9 @@ const listOfRPGThings = [
     ["omt.png", "https://www.drivethrurpg.com/product/171413/On-Mighty-Thews?manufacturers_id=5335"],
     ["nod.png", "https://www.drivethrurpg.com/product/130234/Nod?manufacturers_id=5335"],
     ["idea.png", "https://www.drivethrurpg.com/product/141036/The-Idea-from-Space"],
-    ["zargon.jpg", "pyramid_of_the_undying.html"],
     ["trader.png", "https://www.drivethrurpg.com/product/113019/The-Cosmic-Trader?manufacturers_id=5335"],
-    ["conan.png", "downloads/World_of_Conan.pdf"]
+    ["conan.png", "downloads/World_of_Conan.pdf"],
+    ["under_the_city_cover.jpg", "under_the_city.html"]
 ]
 
 function preloadRPG() {
