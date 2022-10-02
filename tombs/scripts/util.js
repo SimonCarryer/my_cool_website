@@ -13,3 +13,26 @@ function Shuffle(array) {
     const shuffled = array.sort(() => 0.5 - rand());
     return shuffled;
 }
+
+function d6() {
+    return Math.floor(rand() * 6) + 1;
+}
+
+function rollOver(target) {
+    return d6() > target;
+};
+
+function entryPath(card, path) {
+    var newPath = [...path];
+    newPath.push(card);
+    if (card.entrance) {
+        paths.push(newPath);
+    }
+    else {
+        card.neighbours.forEach(function(neighbour) {
+            if (!newPath.includes(neighbour)) {
+                entryPath(neighbour, newPath);
+            }
+        });
+}
+}

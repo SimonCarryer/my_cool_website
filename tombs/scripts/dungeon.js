@@ -4,7 +4,8 @@ empty = {
 'name': 'Nothing',
 'id':0,
 'sides':[0,0,0,0],
-'entrance': false}
+'description': ["There's nothing here."],
+'tags': []}
 
 positions = [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2]]
 
@@ -47,7 +48,8 @@ function checkCard(card, ends) {
 
 function suitableCard(position) {
     ends = unlinkedEnds(position);
-    possibles = cards.filter(card => checkCard(card, ends))
+    possibles = cards.filter(card => checkCard(card, ends));
+    possibles = possibles.filter(card => !card.entrance);
     return Shuffle(possibles)[0]
 }
 
@@ -101,21 +103,26 @@ function buildDungeon() {
     map[startPosition[0]][startPosition[1]] = {...startCard};
     var unlinked = positions.filter(pos => !unlinkedEnds(pos).every(e => e <= 0));
     var placedPositions = []
-    var daysSinceLastError = 0
+    var tries = 0
+    var counter = 0
     while (unlinked.length > 0) {
         nextPos = Shuffle(unlinked)[0];
         suitable = suitableCard(nextPos);
         if (suitable !== undefined) {
-            daysSinceLastError += 1;
-            map[nextPos[0]][nextPos[1]] = {...suitable}; // here's where a copy of the card gets added
+            map[nextPos[0]][nextPos[1]] = JSON.parse(JSON.stringify(suitable)); // here's where a copy of the card gets added
             placedPositions.push(nextPos);
+            tries = 0
         }
         else {
             badPos = placedPositions.pop()
             map[badPos[0]][badPos[1]] = {...empty};
-            if (daysSinceLastError == 1) {
-                badPos = placedPositions.pop()
-                map[badPos[0]][badPos[1]] = {...empty};
+            tries += 1
+            if (tries > 1) {
+                while (tries > 1) {
+                    badPos = placedPositions.pop()
+                    map[badPos[0]][badPos[1]] = {...empty};
+                    tries -= 1;
+                }
             }
             daysSinceLastError = 0;
         }
@@ -152,31 +159,32 @@ function addLinks() {
         )
 }
 
-function entryPath(card, path) {
-    var newPath = [...path];
-    newPath.push(card.pos);
-    if (card.entrance) {
-        paths.push(newPath);
-    }
-    else {
-        card.neighbours.forEach(function(neighbour) {
-            if (!newPath.includes(neighbour.pos)) {
-                entryPath(neighbour, newPath);
-            }
-        });
-}
+function looted(pathList) {
+    return !pathList.every(p => p.some(c => c.tags.includes('impassible')));
 }
 
-function distances() {
+
+function findPaths() {
     positions.forEach(position => {
         card = map[position[0]][position[1]];
         paths = [];
         entryPath(card, []);
+        card.looted = looted(paths);
         distance = Math.min(...paths.map(p => p.length));
         card.distance = distance;
     });
 }
 
+function prepCards() {
+    positions.forEach(position => {
+        card = map[position[0]][position[1]];
+        card.signs = [];
+    });
+}
+
+
 buildDungeon()
 addLinks()
-distances()
+findPaths()
+prepCards()
+
