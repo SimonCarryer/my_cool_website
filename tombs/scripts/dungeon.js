@@ -48,7 +48,8 @@ function checkCard(card, ends) {
 
 function suitableCard(position) {
     ends = unlinkedEnds(position);
-    possibles = cards.filter(card => checkCard(card, ends))
+    possibles = cards.filter(card => checkCard(card, ends));
+    possibles = possibles.filter(card => !card.entrance);
     return Shuffle(possibles)[0]
 }
 
@@ -102,24 +103,25 @@ function buildDungeon() {
     map[startPosition[0]][startPosition[1]] = {...startCard};
     var unlinked = positions.filter(pos => !unlinkedEnds(pos).every(e => e <= 0));
     var placedPositions = []
-    var daysSinceLastError = 0
+    var tries = 0
     var counter = 0
     while (unlinked.length > 0) {
         nextPos = Shuffle(unlinked)[0];
         suitable = suitableCard(nextPos);
         if (suitable !== undefined) {
-            daysSinceLastError += 1;
             map[nextPos[0]][nextPos[1]] = JSON.parse(JSON.stringify(suitable)); // here's where a copy of the card gets added
             placedPositions.push(nextPos);
+            tries = 0
         }
         else {
             badPos = placedPositions.pop()
             map[badPos[0]][badPos[1]] = {...empty};
-            if (daysSinceLastError >= 1) {
-                while (daysSinceLastError >= 1) {
+            tries += 1
+            if (tries > 1) {
+                while (tries > 1) {
                     badPos = placedPositions.pop()
                     map[badPos[0]][badPos[1]] = {...empty};
-                    daysSinceLastError -= 1;
+                    tries -= 1;
                 }
             }
             daysSinceLastError = 0;
@@ -173,8 +175,16 @@ function findPaths() {
     });
 }
 
+function prepCards() {
+    positions.forEach(position => {
+        card = map[position[0]][position[1]];
+        card.signs = [];
+    });
+}
+
 
 buildDungeon()
 addLinks()
 findPaths()
+prepCards()
 
