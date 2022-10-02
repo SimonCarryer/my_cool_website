@@ -14,22 +14,33 @@ roomFeatures = {
                             'interactive': {
                                 'summary': 'Inside the cauldron',
                                 'content': ['The cauldron contains 1d20 x 100 silver coins.',
+                                            'Within the cauldron is ceremonial gold armour worth 1d4 x 1,000gp',
                                             '1d6 iron swords are piled inside the cauldron.',
                                             'The cauldron is filled with thousands of bronze coins, fused by age and corrosion into a single mass.',
                                             'A venomous viper is coiled up at the bottom of the cauldron (1HD, bite 1d4 save or die). Beneath the viper is 1d6 x 100 gold pieces.']
                             }},
-        'looted': {'text': 'Scraps of corroded metal are scattered across the floor.'}
+        'looted': {'text': 'Scraps of corroded metal are scattered across the floor.'}}
+        ,
+        {'undisturbed': {'text': 'Dust-covered silverware, pitchers and mugs',
+                            'interactive': {
+                                'summary': 'Examine the wares',
+                                'content': ['The goods are of pewter and silver, worth only 1d6 x 10gp',
+                                            'Many of the goods are finely-wrought gold, and the hoard is worth 1d4 x 1,000gp']
+                            }},
+        'looted': {'text': 'A few worthless artefacts of ancient construction are hidden behind fallen masonry.'}
     }
     ],
     'rubble': [
         {'text': "Rubble fills the area to the ceiling.",
          'interactive': {'summary': 'Dig through the rubble',
                          'content': ['After an hour of digging, a way through can be found.', 
+                                    'The rubble can be cleared after only 1d4 turns.',
                                     'The rubble continues to pour from the ceiling, erasing any progress as soon as it is made.',
                                      'Digging will trigger a collapse, which will bury anyone nearby in deep rubble.']}},
         {'text': "Huge blocks of stone have fallen from the ceiling, leaving a narrow gap through.",
         'interactive': {'summary': 'Wriggle through the gap.',
-                        'content': ['After a short distance the passage opens to the far side of the rubble.', 
+                        'content': ['After a short distance the passage opens to the far side of the rubble.',
+                                    'Anyone not small or unusually nimble risks becoming stuck in a tight squeeze.', 
                                     'The rocks are unstable and will collapse if disturbed.']}},
 
     ],
