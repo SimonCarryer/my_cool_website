@@ -73,17 +73,17 @@ function addAnimals() {
         card.signs.push(Shuffle(signs)[0])
     });
 
+    treasure = animalType["treasure"];
     encounter = Shuffle(animalType["encounters"])[0];
     lastRoom = path.shift();
+    if (d6() >= 5) {
+        lastRoom.description.push(Shuffle(treasure)[0])
+    };
     lastRoom.description.push(encounter);
 
     contents = animalType["contents"];
-    treasure = animalType["treasure"];
     path.forEach(card => {
         card.description.push(Shuffle(contents)[0])
-        if (d6() >= 5) {
-            card.description.push(Shuffle(treasure)[0])
-        };
     });
 }
 
