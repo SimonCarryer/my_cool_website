@@ -91,7 +91,9 @@ const listOfRPGThings = [
     ["idea.png", "https://www.drivethrurpg.com/product/141036/The-Idea-from-Space"],
     ["trader.png", "https://www.drivethrurpg.com/product/113019/The-Cosmic-Trader?manufacturers_id=5335"],
     ["conan.png", "downloads/World_of_Conan.pdf"],
-    ["under_the_city_cover.jpg", "under_the_city.html"]
+    ["under_the_city_cover.jpg", "under_the_city.html"],
+    ["devils.png", "devils_and_their_lies.html"],
+    ["idea.png", "https://www.drivethrurpg.com/product/141036/The-Idea-from-Space"]
 ]
 
 function preloadRPG() {
