@@ -93,6 +93,7 @@ const listOfRPGThings = [
     ["conan.png", "downloads/World_of_Conan.pdf"],
     ["under_the_city_cover.jpg", "under_the_city.html"],
     ["devils.png", "devils_and_their_lies.html"],
+    ["chromas.jpg", "that_bastard_chromas.html"],
     ["idea.png", "https://www.drivethrurpg.com/product/141036/The-Idea-from-Space"]
 ]
 
