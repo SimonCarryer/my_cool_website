@@ -100,6 +100,7 @@ function preloadRPG() {
 }
 
 function yourRPGFunction() {
+    preloadRPG()
     document.querySelector("#flipper").classList.toggle("flip")
     var elem = document.getElementById("front")
     if (counter % 2 == 0) {
