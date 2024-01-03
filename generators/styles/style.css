@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(1, 1, 20)
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-variant-caps: small-caps;
+    animation: wiggle 2s;
+    animation-iteration-count: infinite;
+    font-size: 300%;
+    color: rgba(255, 255, 255, 0.908);
+}
+
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 150%;
+    color: rgb(1, 1, 9);
+}
+
+.item {
+    background-color: rgba(255, 255, 255, 0.908);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.header {
+    text-align: center;
+    width: 100%;
+}
+
+.columns {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.column {
+    width: 365px;
+    display: flex;
+    flex-direction: column;
+}
