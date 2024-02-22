@@ -93,6 +93,8 @@ const listOfRPGThings = [
     ["conan.png", "downloads/World_of_Conan.pdf"],
     ["under_the_city_cover.jpg", "under_the_city.html"],
     ["devils.png", "devils_and_their_lies.html"],
+    ["zargon.jpg", "pyramid_of_the_undying.html"],
+    ["fighter.png", "character_playbooks.html"],
     ["chromas.jpg", "that_bastard_chromas.html"]]
 
 function preloadRPG() {
