@@ -45,6 +45,7 @@ document.addEventListener('mousemove', (event) => {
 
 
 const listOfThings = [
+    ["bidibids.jpg", "https://www.instagram.com/the_bidibids/"],
     ["batc_cover.jpg", "https://barryandthecrumpets.bandcamp.com/album/a-good-keen-band"],
     ["bot_ross.png", "https://towardsdatascience.com/bot-ross-teaching-a-computer-to-paint-f5a9c9ef908"],
     ["garfield.jpeg", "https://medium.com/@simoncarryer/damn-near-killed-him-30042c796e29"],
@@ -52,6 +53,7 @@ const listOfThings = [
     ["birdle.jpg", "http://birdnerd.co.nz/birdle/"],
     ["evolved.png", "https://github.com/SimonCarryer/mutant_flowers"],
     ["moviemaths.png", "http://moviemaths.com/"],
+    ["bidibids.jpg", "https://www.instagram.com/the_bidibids/"],
     ["dungeon.png", "http://onemilliondungeons.com/"],
     ["soft_science.png", "https://www.youtube.com/watch?v=p4vDnjSYB-Q"],
     ["buns.png", "https://medium.com/@simoncarryer/burger-wellington-data-analysis-29342b5ba65b"],
