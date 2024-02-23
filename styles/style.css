@@ -59,6 +59,11 @@ a {
     filter: grayscale();
 }
 
+.inlineImage {
+    object-fit: contain;
+    max-width: 100%;
+}
+
 .flipimage {
     filter: grayscale();
     height: 365px;
