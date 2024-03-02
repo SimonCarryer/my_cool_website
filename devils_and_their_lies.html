@@ -42,15 +42,25 @@
                 </div>
             </div>
             <div class="item">
-                <form style="border:1px solid #ccc;padding:3px;text-align:center;"
-                    action="https://tinyletter.com/SimonCarryer" method="post" target="popupwindow"
-                    onsubmit="window.open('https://tinyletter.com/SimonCarryer', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
-                    <p><label for="tlemail">Sometimes I like to send emails!<br> Maybe you would like to receive
-                            them?</label>
-                    </p>
-                    <p><input type="text" style="width:140px" name="email" id="tlemail" /></p><input type="hidden"
-                        value="1" name="embed" /><input type="submit" value="Subscribe" /><br><br>
-                </form>
+                <form
+                action="
+                  https://buttondown.email/api/emails/embed-subscribe/carryer
+                "
+                method="post"
+                target="popupwindow"
+                class="embeddable-buttondown-form"
+              >
+                <label for="email">Do you like getting emails?</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="you@example.com"
+                />
+                <input type="hidden" value="1" name="embed" />
+                <input type="submit" value="Subscribe" />
+                <p>
+                </p>
+              </form>
             </div>
         </div>
     </div>
