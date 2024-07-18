@@ -97,7 +97,10 @@ const listOfRPGThings = [
     ["devils.png", "devils_and_their_lies.html"],
     ["zargon.jpg", "pyramid_of_the_undying.html"],
     ["fighter.png", "character_playbooks.html"],
-    ["chromas.jpg", "that_bastard_chromas.html"]]
+    ["chromas.jpg", "that_bastard_chromas.html"],
+    ["urushan.png", "sanctuary_of_urushan_the_summoner.html"],
+    ["under_the_city_cover.jpg", "under_the_city.html"]
+]
 
 function preloadRPG() {
     listOfRPGThings.forEach(preloadImage)
