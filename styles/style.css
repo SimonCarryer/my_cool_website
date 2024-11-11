@@ -2,6 +2,10 @@ body {
     background-color: rgb(1, 1, 20)
 }
 
+.grey {
+    background-color: darkgrey;
+}
+
 h1 {
     font-family: 'Courier New', Courier, monospace;
     font-variant-caps: small-caps;
@@ -15,6 +19,12 @@ h1 {
 h2 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 150%;
+    color: rgb(1, 1, 9);
+}
+
+h3 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 120%;
     color: rgb(1, 1, 9);
 }
 
@@ -104,6 +114,10 @@ a {
     flex-direction: column;
 }
 
+.wide {
+    width: 500px;
+}
+
 #column1 {
     order: 1;
 }
@@ -139,9 +153,19 @@ a {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.chapter {
+    font-family: Garamond, serif; 
+    font-size: larger; 
+    padding: 20px
+}
+
 .text {
     padding: 10px;
     font-size: 80%;
+}
+
+.right {
+    text-align: right
 }
 
 
