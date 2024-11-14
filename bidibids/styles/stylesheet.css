@@ -71,6 +71,10 @@ h1 {
     padding-right: 50px;
 }
 
+.mobileOnly {
+    display: none;
+}
+
 @media only screen and (max-width: 600px) {
     .columns {
         display: flex;
@@ -89,4 +93,12 @@ h1 {
         padding-right: 25px;
     }
 
+    body {
+        background-image: none;
+    }
+
+    .mobileOnly {
+        display: inline;
+        width: 100%;
+    }
 }
