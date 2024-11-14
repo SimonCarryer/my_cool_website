@@ -75,6 +75,42 @@ h1 {
     display: none;
 }
 
+.inital {
+    float: left;
+    height: 2em;
+    width: 2em;
+    font-family: 'basteleur';
+}
+
+.has-dropcap:first-letter {
+    font-family: 'basteleur';
+    float: left;
+    font-size: 3rem;
+    line-height: 2rem;
+    margin: 0.0em 0.1em 0em 0;
+
+  }
+  
+  .dropcap {
+    float: left;
+    font-size: 6rem;
+    line-height: 1;
+    margin: 0.1em 0.1em 0.2em 0;
+    padding: 0.1em;
+  }
+  .dropcap:before,
+  .dropcap:after {
+    content: "";
+    display: block;
+  }
+  .dropcap:before {
+    margin-top: -0.2em;
+  }
+  .dropcap:after {
+    margin-bottom: -0.15em;
+  }
+
+
 @media only screen and (max-width: 600px) {
     .columns {
         display: flex;
