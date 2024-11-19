@@ -26,15 +26,16 @@
 
 body {
     background-color: black;
-    background-image: url("../../images/bidibids.jpg");
-    background-position: 0% 48%;
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
     margin: 0px;
-    margin-bottom: 100px;
 }
 
+.backgroundImage {
+    background-image: url("../../images/bidibids.jpg");
+    background-position: center; 
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+}
 
 
 img {
@@ -129,7 +130,7 @@ h1 {
         padding-right: 25px;
     }
 
-    body {
+    .backgroundImage {
         background-image: none;
     }
 
